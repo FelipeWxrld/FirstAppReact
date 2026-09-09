@@ -1,3 +1,4 @@
+import { useState } from "react";
 import ReactLogo from './assets/reactlogo.png'
 import './styles.css'
 
@@ -25,9 +26,10 @@ const content = [
     "React on the other hand embraces declarative programming",
     "With React, you define the goal and React figures out how to get there"
   ]
+  
 ];
-
-function App() { 
+export default function App() {
+  const [activeContentIndex, setActiveContentIndex] = useState(0);
 
   return (
     <div>
@@ -41,21 +43,25 @@ function App() {
 
       <div id="tabs">
         <menu>
-          <button>Why React?</button>
-          <button>Core Features</button>
-          <button>Related Resources</button>
+          <button onClick={() => setActiveContentIndex(0)}>
+            Why React?
+          </button>
+          <button onClick={() => setActiveContentIndex(1)}>
+            Core Features
+          </button>
+          <button onClick={() => setActiveContentIndex(2)}>
+            Related Resources
+          </button>
         </menu>
 
         <div id="tab-content">
           <ul>
-          {content[0].map((item) => (
-    <li key={item}>{item}</li>
-  ))}
+            {content[activeContentIndex].map((item) => (
+              <li key={item}>{item}</li>
+            ))}
           </ul>
         </div>
       </div>
     </div>
-  )
+  );
 }
-
-export default App
