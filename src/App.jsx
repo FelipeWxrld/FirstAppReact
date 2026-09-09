@@ -1,4 +1,5 @@
 import ReactLogo from './assets/reactlogo.png'
+import './styles.css'
 
 function App() { 
 
