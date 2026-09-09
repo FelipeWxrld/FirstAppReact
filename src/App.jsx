@@ -43,12 +43,18 @@ export default function App() {
 
       <div id="tabs">
         <menu>
+        
+        className={activeContentIndex === 0 ? "active" : ""}
           <button onClick={() => setActiveContentIndex(0)}>
             Why React?
           </button>
+          
+          className={activeContentIndex === 1 ? "active" : ""}
           <button onClick={() => setActiveContentIndex(1)}>
             Core Features
           </button>
+          
+          className={activeContentIndex === 2 ? "active" : ""}
           <button onClick={() => setActiveContentIndex(2)}>
             Related Resources
           </button>
